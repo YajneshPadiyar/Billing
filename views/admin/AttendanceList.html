@@ -1,0 +1,75 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="EmployeeManageCtrl as EmpMgm">
+			<div class='FormTitle'><h1>Employee Management</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("HomePage")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("ManageEmployee")'>Mark Attendance</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='EmpMgm.Goto("AttendanceList")'>Attendance List</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("ApplyLeave")'>Apply Leave</div></div>
+						<!--div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='AdmOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageTax")'>Manage Tax</div></div-->
+					</div>
+				</div>
+			</div>
+			<div class='DisplayTable ContentBody'>
+			
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='ResultRow AttHeaderMonth'>
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell  minWidth10px SmallCell' ng-repeat='y in EmpMgm.gYears'>
+										<div class='Button' ng-class="{'Active':EmpMgm.YearSelect==y}" ng-click='EmpMgm.YearSelected(y)'>{{y}}</div>
+									</div>
+									<div class='DisplayCell  minWidth10px SmallCell' ng-repeat='m in EmpMgm.gMonths'>
+										<div  class='Button' ng-class="{'Active':EmpMgm.MonthSelect==m}" ng-click='EmpMgm.MonthSelected(m)'>{{m}}</div>
+									</div>									
+								</div>
+							</div>	
+						</div>
+						<div class='ResultRow AttHeader' >
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell minWidth50px'>Sl #</div>
+									<div class='DisplayCell minWidth100px'>User ID</div>
+									<div class='DisplayCell'>User Name</div>
+									<div class='DisplayCell  minWidth10px SmallCell' ng-repeat='d in EmpMgm.DayList'>
+										<div class='GreenMark indCell'>{{d}}</div>
+									</div>								
+								</div>
+							</div>	
+						</div>
+						<div class='ResultRow' ng-repeat='x in EmpMgm.AttandanceList' ng-class="{'DisplayNone':EmpMgm.RecordsFound==false}">
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell minWidth50px'>{{$index+1}}</div>
+									<div class='DisplayCell minWidth100px'>{{x.LOGIN_ID}}</div>
+									<div class='DisplayCell'>{{x.USER_NAME}}</div>																	
+									<div class='DisplayCell minWidth10px SmallCell' ng-repeat='y in x.FinalList'>
+										<div class='GreenMark indCell' title="{{y.key}}" ng-if="y.value==true && y.Type=='Present'">P</div>
+										<div class='YellowMark indCell' title="{{y.key}}" ng-if="y.value==true && y.Type=='Leave'">L</div>
+										<div class='RedMark indCell' title="{{y.key}}" ng-if="y.value!=true">A</div>
+									</div>										
+								</div>
+							</div>	
+						</div>
+						<div class='ResultRow' ng-class="{'DisplayNone':EmpMgm.RecordsFound==true}">
+						No Records Found
+						</div>
+					</div>				
+					<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>					
+					<div class='DisplayCell'>
+						<div class='SearchOptionsDiv'>
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

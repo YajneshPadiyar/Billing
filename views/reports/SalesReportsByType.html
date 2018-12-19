@@ -1,0 +1,54 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="ReportsController as RptOpt">
+			<div class='FormTitle'><h1>Sales Report By Product Type</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("Home")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button'  ng-click='RptOpt.Goto("SalesReport")'>Sales Report</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='RptOpt.Goto("SalesProductType")'>Sales By Product Type</div></div>
+						<!--div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("ManageTax")'>Manage Tax</div></div-->
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class='DisplayTable width100'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>						
+						<div class='SearchOptionsDiv'>
+							<div class='SearchOptions'>
+								<div class='DisplayTable'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FormTitle'><h1>Select Data</h1></div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Date</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='date' ng-model="RptOpt.DateRange" ng-change='RptOpt.DateChange()' />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell width100'>
+						<div class='GraphSection width100'>
+							<nvd3 options="SalesByTypeOptions" data="SalesSalesByTypeData"></nvd3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div ng-controller="AddProductController as AddProduct" class='Wrapper ApplicationContent'>
+	
+	<div class='FormOptions'>
+		<div class='Button' ng-click='AddProduct.GoToHome()'>Home</div>
+		<div class='Button' ng-click='AddProduct.AddNewProduct()'>New Record</div>
+		<div class='Button' ng-click='AddProduct.PrintBarcode()'>Print Barcode</div>
+	</div>
+	<div>
+		<div class='FloatLeft ContentLeft'>
+			<div class='FormTitle'><h1>Select Product</h1></div>
+			<div class='DisplayTable'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Item Name</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabIndex="0" type='text' ng-model="AddProduct.ItemName"/>
+						</div>
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Number of Labels</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabIndex="0" type='number' ng-model="AddProduct.NoOfLabel"/>
+						</div>
+					</div>
+				</div>
+				<div class='Button' ng-click="AddProduct.PrintLabel()" tabIndex="0">
+					<span>Print Label</span>
+				</div>
+				<div class='FieldLink'>
+					<span><a href='#/ListOfProducts'>Cancel</a></span>
+				</div>
+			</div>
+		</div>
+		<div class='FloatRight ContentRight'>
+			<iframe src="{{AddProduct.Source}}" width="800px" height="800px"></iframe>
+		</div>
+	</div>
+ </div>

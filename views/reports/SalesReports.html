@@ -1,0 +1,37 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="ReportsController as RptOpt">
+			<div class='FormTitle'><h1>Sales Reports</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("Home")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button Active'  ng-click='RptOpt.Goto("SalesReport")'>Sales Report</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("SalesProductType")'>Sales By Product Type</div></div>
+						<!--div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='RptOpt.Goto("ManageTax")'>Manage Tax</div></div-->
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class='DisplayTable width100 SubMenu'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'><div class='Button Week' ng-click='RptOpt.GenerateRpt("Weekly")'>Weekly Report</div></div>
+					<div class='DisplayCell'><div class='Button Month'  ng-click='RptOpt.GenerateRpt("Monthly")'>Monthly Report</div></div>
+					<div class='DisplayCell'><div class='Button Year' ng-click='RptOpt.GenerateRpt("Yearly")'>Yearly Report</div></div>
+				</div>
+			</div>
+			<div class='DisplayTable width100'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='GraphSection width100'>
+							<nvd3 options="SalesOptions" data="SalesData"></nvd3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

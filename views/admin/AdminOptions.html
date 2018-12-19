@@ -1,0 +1,136 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AdminOptionsCtrl as AdmOpt">
+			<div class='FormTitle'><h1>Admin - Manage Options</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("Home")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button Active'  ng-click='AdmOpt.Goto("AdminOptions")'>Options</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageTax")'>Manage Tax</div></div>
+					</div>
+				</div>
+			</div>
+			<div class='AdminOptions'>
+			<div class='DisplayTable'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell SearchOptionsDiv'>
+						<div class='SearchOptions'>
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FormTitle'><h1>Search Options</h1></div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Category</span>
+										</div>
+										<div class='FieldInput'>
+											<select class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Category">
+												<option ng-repeat="option in AdmOpt.CatType" value="{{option.val}}">{{option.name}}</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Reference Value</span>
+										</div>
+										<div class='FieldInput'>
+											<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.RefVal"/>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Value</span>
+										</div>
+										<div class='FieldInput'>
+											<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Val"/>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='Button' ng-click='AdmOpt.SearchOptions()'>Search</div>
+										<div class='Button' ng-click='AdmOpt.Goto("NewOptions")'>Add New</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='DisplayCell SearchResultDiv'>
+						<div class='SearchResultSection'>
+						<div class='ResultRow' ng-repeat='x in AdmOpt.SearchResult'>
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Category</span>
+										</div>
+										<div class='FieldValueDiv'>
+											<div class='FieldValue' >{{x.CATEGEORY}}</div>
+										</div>
+									</div>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Reference Value</span>
+										</div>
+										<div class='FieldValueDiv'>
+											<div class='FieldValue'>{{x.BACKEND_VALUE}}</div>
+										</div>
+									</div>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Value</span>
+										</div>
+										<div class='FieldValueDiv'>
+											<div class='FieldValue'>{{x.DISPLAY_VALUE}}</div>
+										</div>
+									</div>
+									<div class='Link FloatLeft' ng-click="AdmOpt.EditOptions(x.ROW_ID)"><a>Edit</a></div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Status</span>
+										</div>
+										<div class='FieldValueDiv'>
+											<div class='FieldValue'>{{x.ACTIVE?'Active':'Inactive'}}</div>
+										</div>
+									</div>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Order</span>
+										</div>
+										<div class='FieldValueDiv'>
+											<div class='FieldValue'>{{x.ORDER_BY}}</div>
+										</div>
+									</div>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Parent Id</span>
+										</div>
+										<div class='FieldValueDiv'>
+											<div class='FieldValue'>{{x.PARENT_ID}}</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

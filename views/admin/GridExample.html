@@ -1,0 +1,26 @@
+<style>
+.gridexample{
+top:100px;
+position:absolute;
+}
+.FormOptions{
+margin-bottom:5px;
+min-height:40px;
+
+}
+.FormOptions .Button{
+float:left;
+}
+
+</style>
+
+ <div ng-controller="GridExample as ToLogin" class='gridexample'>
+	
+	<div class='FormOptions'>
+		<div class='Button' ng-click='ToLogin.AddNewOptions()'>New Record</div>
+	</div>
+	<div>
+	<table id="celltbl"></table>
+	<div id="pcelltbl"></div>
+	</div>
+ </div>

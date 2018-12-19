@@ -1,0 +1,164 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AdminOptionsCtrl as AdmOpt">
+			<div class='FormTitle'><h1>Admin - Manage Options</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("Home")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("AdminOptions")'>Options</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='AdmOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageTax")'>Manage Tax</div></div>
+					</div>
+				</div>
+			</div>
+			<div class='DisplayTable'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<table id="celltblUser"></table>
+						<div id="pcelltblUser"></div>
+					</div>				
+					<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>					
+					<div class='DisplayCell'>
+						<div class='SearchOptionsDiv'>
+							<div class='SearchOptions'>
+								<div class='DisplayTable'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FormTitle'><h1>User Password Reset</h1></div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>User Name</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.UserName" />
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Password</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='password' ng-model="AdmOpt.Password"/>
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='Button' ng-click='AdmOpt.Reset()'>Reset</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<table id="celltblUserRole"></table>
+					</div>
+					<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>	
+					<div class='DisplayCell'>
+						<div class='SearchOptionsDiv'>
+							<div class='SearchOptions'>
+								<div class='DisplayTable'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FormTitle'><h1>Add Role to User</h1></div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>User Name</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='text' ng-readonly="true" ng-model="AdmOpt.UserNameRole" />
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Role Name</span>
+											</div>
+											<div class='FieldInput'>
+												<!--input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.RoleName"/-->
+												<md-autocomplete												  
+												  ng-disabled="AdmOpt.isDisabled"
+												  md-no-cache="AdmOpt.noCache"
+												  md-selected-item="AdmOpt.selectedItem2"
+												  md-search-text-change="AdmOpt.searchTextChange2(AdmOpt.searchText2)"
+												  md-search-text="AdmOpt.searchText2"
+												  md-selected-item-change="AdmOpt.selectedItemChange2(item)"
+												  md-items="item in AdmOpt.querySearchRole(AdmOpt.searchText2)"
+												  md-item-text="item.role"
+												  md-min-length="0"
+												  placeholder="Pick Role Name"
+												  md-menu-class="autocomplete-custom-template">
+												<md-item-template>
+												  <span class="item-title">
+													<md-icon md-svg-icon="img/stock.svg"></md-icon>
+													<span> <span class='PriceFontDefaultSmall'>Role Name : </span><span class='PriceFontDefaultSmall'>{{item.ROLE_NAME}}</span> </span>
+												  </span>
+												  <span class="item-metadata">
+													<span class="item-metastat PriceFontDefaultSmall"><span>Description : </span><span class='PriceFontDefaultSmall'>{{item.DESCRIPTION}},</span></span>
+												  </span>
+												</md-item-template>
+											  </md-autocomplete>
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Store Name</span>
+											</div>
+											<div class='FieldInput'>
+												<!--input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.StoreName"/-->
+												<md-autocomplete												  
+												  ng-disabled="AdmOpt.isDisabled"
+												  md-no-cache="AdmOpt.noCache"
+												  md-selected-item="AdmOpt.selectedItem"
+												  md-search-text-change="AdmOpt.searchTextChange(AdmOpt.searchText)"
+												  md-search-text="AdmOpt.searchText"
+												  md-selected-item-change="AdmOpt.selectedItemChange(item)"
+												  md-items="item in AdmOpt.querySearch(AdmOpt.searchText)"
+												  md-item-text="item.name"
+												  md-min-length="0"
+												  placeholder="Pick Store Name"
+												  md-menu-class="autocomplete-custom-template">
+												<md-item-template>
+												  <span class="item-title">
+													<md-icon md-svg-icon="img/stock.svg"></md-icon>
+													<span> <span class='PriceFontDefaultSmall'>Store Name : </span><span class='PriceFontDefaultSmall'>{{item.STORE_NAME}}</span> </span>
+												  </span>
+												  <span class="item-metadata">
+													<span class="item-metastat PriceFontDefaultSmall"><span>Description : </span><span class='PriceFontDefaultSmall'>{{item.DESCRIPTION}},</span></span>
+												  </span>
+												</md-item-template>
+											  </md-autocomplete>	
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='Button' ng-click='AdmOpt.AddRole("Add")'>Add Role</div>
+											<div class='Button' ng-click='AdmOpt.AddRole("Remove")'>Remove Role</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

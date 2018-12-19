@@ -1,0 +1,37 @@
+		<div class='Wrapper'>
+			<div class='InnerWrapper ContainerFlex'>
+			<div class='ItemFlex'></div>
+			<div class='ItemFlex'></div>
+				<div class='Content LoginForm ItemFlex' ng-controller="LoginController as ToLogin">
+					<div class='AppTitle '>
+						<h1 ng-bind="ToLogin.AppTitle">App Title</h1>
+					</div>
+					<div class='AppTagLine '>
+						<h2 ng-bind="ToLogin.AppTagLine">App Tagline</h2>
+					</div>
+					<div class='ErrorMessage '  ng-show="ToLogin.isError">
+						<p>{{ToLogin.ErrorMessage}}</p>
+					</div>
+					<div class='FieldLabel '>
+						<span class='LabelText'>Username</span>
+					</div>
+					<div class='FieldInput '>
+						<input class='InputField' type='text' ng-model="ToLogin.Username" ng-keyup="ToLogin.EnterKeyPress($event)"/>
+					</div>
+					<div class='FieldLabel '>
+						<span class='LabelText'>Password</span>
+					</div>
+					<div class='FieldInput '>
+						<input class='InputField' type='password' ng-model="ToLogin.Password" ng-keyup="ToLogin.EnterKeyPress($event)"/>
+					</div>
+					<div class='Button ' ng-click="ToLogin.Login(ToLogin)">
+						<span>Login</span>
+					</div>
+					<div class='FieldLink '>
+						<!--<span><a href='#/forgotPassword'>Forgot Password ?</a></span>&nbsp;|&nbsp;-->
+						<span><a href='#/register'>Register now</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--div id="footer"><span>Powered by <strong>Solutions</strong></span></div-->

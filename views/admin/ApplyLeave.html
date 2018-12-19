@@ -1,0 +1,89 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="EmployeeManageCtrl as EmpMgm">
+			<div class='FormTitle'><h1>Employee Management</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("HomePage")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("ManageEmployee")'>Mark Attendance</div></div>
+						<div class='DisplayCell'><div class='Button ' ng-click='EmpMgm.Goto("AttendanceList")'>Attendance List</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='EmpMgm.Goto("ApplyLeave")'>Apply Leave</div></div>
+					</div>
+				</div>
+			</div>
+			<div class='DisplayTable ContentBody'>			
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>User Id</span>
+						</div>
+						<div class='FieldInput Readonly'>
+							<input class='InputField' tabIndex="0" type='text' ng-model="EmpMgm.UserID" ng-readonly="true"/>
+						</div>
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>User Name</span>
+						</div>
+						<div class='FieldInput Readonly'>
+							<input class='InputField' tabIndex="0" type='text' ng-model="EmpMgm.UserName" ng-readonly="true"/>
+						</div>						
+					</div>				
+				</div>	
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Leave Type</span>
+						</div>
+						<div class='FieldInput'>
+							<select class='InputField' tabindex="0" type='text' ng-model="EmpMgm.LeaveType">
+								<option ng-repeat="option in EmpMgm.LeaveTypeList" value="{{option.val}}">{{option.name}}</option>
+							</select>
+							<i!--nput class='InputField' tabIndex="0" type='text' ng-model="EmpMgm.LeaveType"/-->
+						</div>	
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Leave Start Date</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabIndex="0" type='date' ng-model="EmpMgm.LeaveStartDate"  ng-change="EmpMgm.OnLeaveDateChange('S')"/>
+						</div>	
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Leave End Date</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabIndex="0" type='date' ng-model="EmpMgm.LeaveEndDate" ng-change="EmpMgm.OnLeaveDateChange('E')"/>
+						</div>	
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Total Number of Days</span>
+						</div>
+						<div class='FieldInput Readonly'>
+							<input class='InputField'  type='number' ng-model="EmpMgm.LeaveTotal" ng-readonly="true" />
+						</div>	
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='Button' ng-click='EmpMgm.SubmitLeave()'>
+							<span>Submit Leave</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

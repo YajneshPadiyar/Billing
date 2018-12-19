@@ -1,0 +1,126 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AdminOptionsCtrl as AdmOpt">
+			<div class='FormTitle'><h1>Admin - Manage Options</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("Home")'	>Home</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='AdmOpt.Goto("AdminOptions")'>Options</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageTax")'>Manage Tax</div></div>
+					</div>
+				</div>
+			</div>
+			<div class='AdminOptions'>
+			<div class='DisplayTable'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell SearchOptionsDiv'>
+						<div class='SearchOptions'>
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FormTitle'><h1>Edit Options</h1></div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Category</span>
+										</div>
+										<div class='FieldInput'>
+											<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Category" />
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Reference Value</span>
+										</div>
+										<div class='FieldInput'>
+											<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.RefVal"/>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Value</span>
+										</div>
+										<div class='FieldInput'>
+											<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Val"/>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='Button' ng-click='AdmOpt.AddUpdateOptions("")'>Add</div>
+										<div class='FieldLink'>
+											<span><a href='#/AdminOptions'>Cancel</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='DisplayCell SearchRDiv EditOptionsDiv'>
+						<div class='SearchOptions'>
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FormTitle'><h1>&nbsp;</h1></div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Status</span>
+										</div>
+										<div class='FieldInput'>
+											<!--input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Active" /-->
+											<select class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Active">
+												<option ng-repeat="option in AdmOpt.StatusList" value="{{option.val}}">{{option.name}}</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Parent Type</span>
+										</div>
+										<div class='FieldInput'>
+											<!--input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.ParentType"/>-->
+											<select class='InputField' tabindex="0" type='text' ng-model="AdmOpt.ParentType">
+												<option ng-repeat="option in AdmOpt.CatType" value="{{option.val}}">{{option.name}}</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										<div class='FieldLabel'>
+											<span class='LabelText'>Order By</span>
+										</div>
+										<div class='FieldInput'>
+											<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.OrderBy"/>
+										</div>
+									</div>
+								</div>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

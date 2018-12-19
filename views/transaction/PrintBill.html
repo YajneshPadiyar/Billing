@@ -1,0 +1,14 @@
+<div class='Wrapper ApplicationContent'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="PrintBill as Bill">
+			<div class='FloatLeft'>
+				<iframe class='DisplayBill' src="{{Bill.Source}}" width="800px" height="900px"/>
+			</div>
+			<div class='FloatLeft'>
+				<div class='Button' ng-click="Bill.UpdateStock()" tabIndex="0">
+						<span>Continue with Next Transaction</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

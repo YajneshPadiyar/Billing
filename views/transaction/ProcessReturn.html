@@ -1,0 +1,69 @@
+<div class='Wrapper ApplicationContent'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="ProcessReturnController as StartBill">
+			<div class='ContentSplit'>				
+				<div class='FloatLeft ContentLeft'>
+					<div class='FormTitle'><h1>Billing</h1></div>
+					<div class='NavButtons'>
+						<div class='Button FloatLeft' ng-click="StartBill.GotoPage('Home')" tabIndex="0">
+							<span>Home</span>
+						</div>
+						<div class='Button FloatLeft' ng-click="StartBill.GotoPage('NewTrans')" tabIndex="0">
+							<span>New Transaction</span>
+						</div>
+					</div>
+					<div class='CustomerDetails'>
+						<div class='DisplayTable'>
+							<div class='DisplayRow SucProdDetails'>
+								<div class='DisplayCell Right'>
+									<div ng-bind ="StartBill.CustDetails.L"></div>
+								</div>
+								<div class='DisplayCell Left'>
+									<div class='DisplayFontReadOnly' ng-bind ="StartBill.CustDetails.V"></div>
+								</div>
+							</div>
+							<div class='DisplayRow SucProdDetails'>
+								<div class='DisplayCell Right'>
+									<div ng-bind ="StartBill.TransDetail.L"></div>
+								</div>
+								<div class='DisplayCell Left'>
+									<div class='DisplayFontReadOnlyColor' ng-bind ="StartBill.TransDetail.V"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class='AddProduct'>						
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight30' >
+									<span class='LabelText'>Bill Number</span>
+							</div>
+							<div class='FieldInput FloatLeft1'>
+								<input class='InputField' tabindex="0" type='number' ng-model="StartBill.BillNumber" ng-keyup='StartBill.EnterKeyPress($event)'/>
+							</div>
+							<div class='FloatLeft'>
+							<div class='ButtonSAA' ng-click="StartBill.SearchAndTransaction()" tabIndex="0">
+								<span>Search</span>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='FloatLeft ContentRight'>
+					<div class='grid'>
+						<table id="celltbl"></table>
+					</div>
+					<div class='TotalDisplay DisplayTable'>						
+						<div class='DisplayRow DummyRow'>
+							<div class='DisplayCell'><div class=''></div></div>
+							<div class='DisplayCell'><div class='' ></div></div>
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.SubmitAndPrint()" >Submit and Print</div></div>
+							<!--div class='DisplayCell'><div class='Button' ng-click="StartBill.PauseTransaction()">Pause</div></div-->
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.CancelTransaction()">Cancel</div></div>							
+						</div>
+					</div>
+				</div>
+			</div>				
+			</div>
+		</div>
+	</div>
+</div>

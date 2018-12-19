@@ -1,0 +1,13 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="RegisterController as ToLogin">
+			<div class='FormTitle'><h1>Registration Successful</h1></div>
+			<div class='SuccessMessage' ng-model="ToLogin.UserName">Registration Successful. Use user name 
+					<b ng-bind="ToLogin.UserName"></b> to login to the applicaiton.
+			</div>
+			<div class='Button' ng-click='ToLogin.GoToLogin()'>
+				<span>Login</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,730 @@
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* Reset Styles */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, stron	g, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  /* App CSS*/
+  
+*{
+	font-family:Arial;
+}
+
+
+.DisplayNone{
+	display:none;
+}
+
+.DisplayTable{
+	display:table;
+}
+
+.DisplayRow{
+	display:table-row;
+}
+
+.DisplayCell{
+	display:table-cell;
+}
+
+.width100{
+	width:100%;
+}
+
+.width50{
+	width:50%;
+}
+
+.minWidth10px{
+	min-width:10px !important;
+}
+.minWidth30px{
+	min-width:30px !important;
+}
+.minWidth40px{
+	min-width:40px !important;
+}
+.minWidth100px{
+	min-width:100px !important;
+}
+.minWidth50px{
+	min-width:50px !important;
+}
+.minWidth150px{
+	min-width:150px !important;
+}
+.SmallCell{
+	padding:0px 5px;
+}
+
+.indCell{
+	width:100%;
+	padding:2px 4px;
+	border-radius: 3px;
+    border: 1px solid #333;
+	cursor:pointer;
+}
+
+.UpsideDown{
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+
+.ContentBody{
+	margin-top:10px;
+	
+}
+
+.Wrapper{
+	height:89%;
+	width:100%;
+	top:60px;
+	position:absolute;
+	/*display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -moz-box;
+    -moz-box-align: center;
+    -moz-box-pack: center;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    display: box;
+    box-align: center;
+    box-pack: center;*/
+}
+
+.InnerWrapper{
+	/*border:2px solid #E4E4E4;*/
+	border-radius:5px;
+	padding:0px 30px 0px 30px;
+	/*box-shadow:5px 5px #D4D4D4;*/
+}
+.Content{
+	min-height:100px;
+	width:100%;
+	background:rgba(255,255,255,0.2);
+    padding: 10px 20px 35px 20px;
+    border-radius: 10px;
+	/*-webkit-box-shadow: 10px 10px 9px 0px rgba(51,51,51,1);
+	-moz-box-shadow: 10px 10px 9px 0px rgba(51,51,51,1);
+	box-shadow: 10px 10px 9px 0px rgba(51,51,51,1);	*/
+}
+#footer span{
+	float:right;
+	margin-right:20px;
+	font-size:10px;
+}
+#footer {
+    /*background-color: #4686CC;*/
+    color: white;
+    font-size: 1rem;
+	padding:2px 0px;
+    text-align: center;
+    line-height: 1em;
+	font-family:Arial;
+}
+#footer{
+	clear: both;
+    position: fixed;
+	width:100%;
+	
+	bottom:0;
+    /*z-index: 10;*/
+    height: 1em;
+    margin-top: 0em;
+}
+.AppTitle{
+	
+}
+.AppTitle h1{
+	margin-top:0px;
+	margin-bottom:5px;
+	margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 36px;
+    font-family: cursive;
+}
+.AppTagLine{
+	
+}
+
+.AppTagLine h2{
+	margin-top:0px;
+	margin-bottom:20px;
+}
+
+.ErrorMessage{
+	
+}
+.SectionFieldLabel{
+	margin-bottom:15px;
+}
+.FieldLabel{
+	margin-bottom:3px;
+}
+.SectionLabelText{
+	font-size:24px;
+}
+.LabelText{
+	font-weight:bold;
+}
+.FieldInput{
+	border:2px solid #E4E4E4;
+	padding:5px 3px 5px 5px;;
+	background:#FFFFFF;
+	border-radius:3px;
+	margin-bottom:3px;
+}
+
+.InputField{
+	border:0px solid #FFFFFF;
+	color:#333;
+	font-size:1rem;
+	outline:none;	
+}
+
+.LoginForm .InputField{
+	min-width:200px;
+	width:100%;
+}
+.FieldLink{
+	margin-top:5px;
+}
+
+.FieldLink a,a.link{
+	/*color:#4686CC;*/
+	cursor:pointer;
+	font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+}
+.Button,.miniButton,.ButtonGreen,.ButtonYellow{
+	border-radius:0px;
+	/*border:1px solid #4686CC;*/
+	color:#FFFFFF;
+	font-weight:bold;
+	/*background:#4686CC;*/
+	padding:5px 10px;
+	margin-top:10px;
+	text-align:center;
+	cursor:pointer;
+	box-shadow:3px 3px #D4D4D4;
+	margin-right: 5px;
+}
+.ButtonGreen,.ButtonYellow{
+	cursor:default;
+	box-shadow:0px 0px #D4D4D4;
+}
+
+.ButtonSAA{
+	border-radius:0px;
+	/*border:1px solid #4686CC;*/
+	color:#FFFFFF;
+	font-weight:bold;
+	/*background:#4686CC;*/
+	padding:5px 10px;
+	margin-top:0px;
+	margin-left:0px;
+	text-align:center;
+	cursor:pointer;
+	box-shadow:3px 3px #D4D4D4;
+}
+
+.Button.Disable{
+	color:#D4D4D4;
+	background:#C4C4C4;
+	border:2px solid #D4D4D4;
+}
+
+
+.RegCell{
+	padding:0 15px 0 0;
+}
+
+.RegForm{
+	border:0px solid #E4E4E4;
+	padding: 10px 0px;
+	border-radius:0px;
+	border-top-width: 0px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.Showborders{
+	border:2px solid #E4E4E4;
+	padding:30px;
+	border-radius:5px;
+}
+
+.FormTitle{		
+	text-align:left;
+	border: 0px solid #E4E4E4;
+	border-bottom-width: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	padding: 10px 0px;
+}
+
+.FormTitle h1{
+	font-size:20px;
+}
+
+.Registration	.ErrorMessage{
+	text-align:center;
+	padding-top:5px;
+	color:E60000;
+	border: 0px solid #E4E4E4;
+	border-top-width:0px;
+	border-bottom-width:0px;
+}
+
+.SuccessMessage{
+	margin-top:10px;
+	margin-bottom:10px;
+	color:green;
+	font-weight:bold;
+	font-size:18px;
+}
+
+.SucProdDetails .Left{
+	text-align:left;
+	font-size:12px;
+	font-weight:bold;	
+}
+.SucProdDetails .Right{
+	text-align:right;	
+	font-size:12px;
+}
+
+.ProdSuccessRegForm{
+	background:#E4E4E4;
+	margin-left:5px;
+	margin-right:5px;
+	padding: 20px 10px;
+	border:2px solid #D4D4D4;
+	border-radius:5px;
+}
+
+.ProdSucSectionText{
+	padding:5px;
+	font-weight:bold;
+	font-size:18px;
+}
+/*new : #4686CC
+Old : #11E6C1*/
+.ApplicationHeader{
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:30px;
+	height: 60px;
+    z-index: 999;
+    /*background: #4686CC;*/
+    position: fixed;
+    width: 100%;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	border-top-width:0px;
+	border-bottom-width:3px;
+	
+}
+.ApplicationContent{
+	position:relative;
+	top:60px;
+}
+.ApplicationTitle{
+	    
+    font-family: cursive;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.Toggle{
+	height: 26px;
+    border-radius: 15px;
+    /*background: #4686CC;*/
+    padding: 3px;
+    width: 78px;
+	}
+
+.ToggleLeft,.FloatLeft{
+	float:left;
+}
+.ToggleRight,.FloatRight{
+	float:right;
+}
+
+.ToggleBtn{
+	height:20px;
+	width:36px;
+	background:#FFFFFF;
+	border-radius:20px;
+	border:2px solid #D4D4D4;
+}
+
+.AlignCenter{
+	text-align:center;
+}
+
+.ResultAccordHead{
+	min-height:50px;
+	min-width:500px;
+	border:2px solid #D4D4D4;
+	margin-bottom:10px;
+	padding:10px 10px;
+	border-radius:5px;
+	line-height:15px;
+}
+
+.AccordHeadTitle{
+	width:60%;
+	
+}
+.AccordHeadTitle .Name{
+	font-weight:bold;
+	font-size:20px;
+	line-height:30px;
+}
+.AccordCell{
+	vertical-align:middle;
+}
+
+.Navigation{
+	min-height:50px;
+	vertical-align:middle;
+}
+
+.PageBtn,.PageInfo{
+	
+}
+
+.PageInfo{
+	line-height:50px;
+}
+.PageBtn.Next{
+	margin-right:20px;
+}
+
+.PageBtn.Prev{
+	margin-left:20px;
+}
+
+.CustomerDetails{
+	border: 1px solid #D4D4D4;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background: #F4F4F4;
+    color: #333;
+	margin-bottom:10px;
+}
+
+.LineHeight30{
+	line-height:30px;
+}
+.LineHeight50{
+	line-height:50px;
+}	
+
+.AddProduct{
+	min-height:100px;
+	padding:10px; 
+}
+.AddProductLine{
+	min-height:50px;
+	width:100%;
+}
+.AddProductLine .FieldLabel{
+	min-width:200px;
+}
+.AddProductLine .FieldLabel .LabelText{
+	/*float:left;*/
+}
+.BillDetails{
+	padding:10px;
+	border:2px solid #E4E4E4;
+	border-radius: 5px;
+}
+.BillDetails .DisplayTable{
+	width:100%;
+	border-top:1px solid #333333;
+	border-left:1px solid #C4C4C4;
+}
+.BillDetails .DisplayCell{
+	
+}
+
+.ProductNameLabel,.QuantityLabel,.PriceLabel{
+	font-weight:bold;
+}
+
+.NavButtons{
+	min-height:50px;
+	width:100%;
+}
+
+.NavButtons .Button{
+	margin-right:5px;
+}
+
+.BillDetails .DisplayCell {
+    border:0px solid #333;
+    padding: 8px 0px 8px 10px;
+	border-top-width:0px;
+	border-left-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-top-color:#C4C4C4;
+	border-left-color:#C4C4C4;
+	border-right-color:#C4C4C4;
+	border-bottom-color:#333333;
+}
+
+.TotalBill .ProductNameLabel,
+.TotalBill .QuantityLabel,
+.TotalBill .PriceLabel{
+	
+}
+.DummyRow .DisplayCell{
+	border-width:0px;
+}
+.TotalBill .DisplayCell{
+	border-top:1px solid #333333;
+}
+
+.BillImageEditDelete{
+	margin-left:5px;
+	margin-right:5px;
+	cursor:pointer;
+}
+
+.AdminMenu .Button{
+	margin-right:10px;
+}
+
+.AdminMenu .Button.Active{
+	/*background:#C4C4C4;
+	color:#333;*/
+}
+
+.Button.noTopMargin{
+	margin-top:5px !important;
+}
+
+
+.SearchResultDiv{
+	padding-top:50px;
+}
+.ResultRow{
+	    /*min-width: 700px;*/
+    margin-left: 20px;
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+	border-radius:5px;
+}
+
+.ResultRow .DisplayCell{
+	min-width:200px;
+}
+
+.SearchResultSection{
+	max-height:390px;
+	overflow-y:overlay;
+	padding-right:30px;
+}
+
+.Link{
+	cursor:pointer;
+	font-weight:bold;
+	text-decoration:underline;
+	color:#FF0000;
+}
+
+.EditOptionsDiv.SearchRDiv{
+	padding-left:20px;
+}
+
+.gridexample{
+top:100px;
+position:absolute;
+}
+.FormOptions{
+margin-bottom:5px;
+min-height:40px;
+
+}
+.FormOptions .Button{
+float:left;
+}
+.ContentSplit{
+	height:100%;
+	width:100%;
+}
+
+.ContentLeft{
+	width:30%;
+	padding-right:10px;
+}
+.ContentRight{
+	Width:60%;
+}
+
+.RowHighLight{
+	background-color:#FFD9F2;
+}
+
+
+
+
+/* Autocomplete*/
+.autocomplete-custom-template li {
+  border-bottom: 1px solid #ccc;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  white-space: normal; }
+
+.autocomplete-custom-template li:last-child {
+  border-bottom-width: 0; }
+
+.autocomplete-custom-template .item-title,
+.autocomplete-custom-template .item-metadata {
+  display: block;
+  line-height: 2; }
+
+.autocomplete-custom-template .item-title md-icon {
+  height: 18px;
+  width: 18px; }
+  
+
+.PriceFontGreen{
+	color:red;
+	background:yellow;
+	font-weight:bold;
+	font-size:16px;
+}
+.PriceFontDefault{
+	color:#000	;
+	background:#FFF;
+	font-weight:bold;
+	font-size:16px;
+}
+
+.PriceFontGreenSmall{
+	color:red;
+	background:yellow;
+	font-weight:bold;
+	font-size:8px;
+}
+.PriceFontDefaultSmall{
+	color:#000	;
+	background:#FFF;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.DisplayFontReadOnly,.DisplayFontReadOnlyColor{
+	font-size:16px;
+}
+
+.DisplayFontReadOnlyColor{
+	color:#F00;
+}
+
+/*body{
+	background-image:url("../img/grass-1243082_1280.jpg");
+	background-repeat-y:no-repeat;
+	background-position:center bottom;	
+}*/
+
+#Home .Button{
+	padding:15px 10px;
+	font-size:30px;
+}
+
+#Home .Button:hover{
+	padding:17px 12px;
+	/*background:#ed6868;*/
+}
+
+
+.miniButton.Logout:before{
+	content:url('../img/power-button.png');
+	margin-right:5px;
+	margin-top:5px;
+}
+
+.StaffCount{
+	margin-left:20%;
+	margin-top:10%;
+	width:100%;
+	font-weight:bold;
+	font-size: 16px;
+}
+
+.StaffCountLabel{
+	font-weight:bold;
+	font-size: 16px;
+	min-width:80px;
+	line-height:30px;
+}
+
+.Readonly,.Readonly input[Readonly="Readonly"]{
+	font-weight:bold;
+}

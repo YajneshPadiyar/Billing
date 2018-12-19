@@ -1,0 +1,59 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="EmployeeManageCtrl as EmpMgm">
+			<div class='FormTitle'><h1>Employee Management</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("HomePage")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='EmpMgm.Goto("ManageEmployee")'>Mark Attendance</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("AttendanceList")'>Attendance List</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='EmpMgm.Goto("ApplyLeave")'>Apply Leave</div></div>
+						<!--div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='AdmOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageTax")'>Manage Tax</div></div-->
+					</div>
+				</div>
+			</div>
+			<div class='DisplayTable ContentBody'>
+				<div class='DisplayRow'>
+					<div class='FieldLabel'>
+						<span class='LabelText'>Search Employee</span>
+					</div>
+					<div class='FieldInput'>
+						<input class='InputField' tabIndex="0" type='text' ng-model="EmpMgm.SearchVal"/>
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='ResultRow' ng-repeat='x in EmpMgm.UserList | filter:{USER_NAME:EmpMgm.SearchVal}'>
+							<div class='DisplayTable'>
+								<div class='DisplayRow'>
+									<div class='DisplayCell'>{{$index+1}}</div>
+									<div class='DisplayCell'>{{x.USER_NAME}}</div>
+									<div class='DisplayCell'>{{x.FULLNAME}}</div>
+									<div class='DisplayCell'>
+										<span  ng-if="x.AttId!=null">
+											<span class='ButtonGreen' ng-if="x.LType=='Present'">Present</span >
+											<span class='ButtonYellow' ng-if="x.LType=='Leave'">Leave</span >
+											<!--span class='ArrowRight'></span-->
+										</span>
+										<span class='Button' ng-click='EmpMgm.MarkPresent(x.USERID,$index,1)' ng-if="x.AttId==null">Mark Present</span>										
+										<span class='Button' ng-click='EmpMgm.MarkPresent(x.USERID,$index,0)' ng-if="x.AttId==null">Mark Leave</span>										
+									</div>									
+								</div>
+							</div>	
+						</div>
+					</div>				
+					<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>					
+					<div class='DisplayCell'>
+						<div class='SearchOptionsDiv'>
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

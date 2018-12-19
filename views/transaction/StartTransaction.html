@@ -1,0 +1,58 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="TransActionController as TransControl">
+			<div class='FormTitle'><h1>Search Customer</h1></div>
+			<div class='CustomerForm'>
+					
+						<div class='DisplayTable'>
+							<div class='DisplayRow'>
+								<div class='DisplayCell'>
+									<div class='FieldLabel'>
+										<span class='LabelText'>Phone Number or Email</span>
+									</div>
+									<div class='FieldInput'>
+										<input class='InputField' tabindex="0" type='TEXT' ng-model="TransControl.PhoneNumber" ng-keyup="TransControl.EnterKeyPress($event)"/>
+									</div>
+								</div>
+							</div>
+							<div class='DisplayRow'>
+								<div class='DisplayCell'>
+									<div class='FieldLabel AlignCenter'>
+										<span class='LabelText'>or</span>
+									</div>									
+								</div>
+							</div>	
+							<div class='DisplayRow'>
+								<div class='DisplayCell'>
+									<div class='FieldLabel'>
+										<span class='LabelText'>First Name</span>
+									</div>
+									<div class='FieldInput'>
+										<input class='InputField' tabindex="0" type='TEXT' ng-model="TransControl.FirstName" ng-keyup="TransControl.EnterKeyPress($event)"/>
+									</div>
+								</div>
+							</div>
+							<div class='DisplayRow'>
+								<div class='DisplayCell'>
+									<div class='FieldLabel'>
+										<span class='LabelText'>Last Name</span>
+									</div>
+									<div class='FieldInput'>
+										<input class='InputField' tabindex="0" type='TEXT' ng-model="TransControl.LastName" ng-keyup="TransControl.EnterKeyPress($event)"/>
+									</div>
+								</div>
+							</div>
+							
+							<div class='Button' ng-click="TransControl.SearchCustomer()" tabIndex="0">
+									<span>Search Customer</span>
+							</div>
+							<div class='FieldLink'>
+								<span><a href='#/HomePage'>Cancel</a></span>&nbsp;|&nbsp;<span><a href='#/AddCustomer'>Add Customer</a></span>&nbsp;|&nbsp;<span><a href='#/SearchExistingBill'>Search Existing Bill</a></span>
+							</div>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>`

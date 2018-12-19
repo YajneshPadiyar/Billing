@@ -1,0 +1,185 @@
+
+		<div class='Wrapper'>
+			<div class='InnerWrapper RegistrationWrap'>
+				<div class='Content LoginForm Registration' ng-controller="RegisterController as ToLogin">
+					<div class='FormTitle'><h1>Registration</h1></div>
+					<div class='ErrorMessage'  ng-show="ToLogin.isError">
+						<p>{{ToLogin.ErrorMessage}}</p>
+					</div>
+					<div class='DisplayTable RegForm'>						
+						<div class='DisplayRow'>
+							<div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='SectionFieldLabel'>
+												<span class='SectionLabelText'>User Details</span>
+											</div>								
+										</div>
+									</div>	 
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>First Name</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabIndex="0" type='text' ng-model="ToLogin.FirstName"/>
+											</div>
+										</div>
+									</div>							
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Last Name</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabIndex="0" type='text' ng-model="ToLogin.LastName"/>
+											</div>
+										</div>
+									</div>	
+									<!--div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Username</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' type='text' ng-model="ToLogin.Username"/>
+											</div>
+										</div>
+									</div-->	
+									<div class='DisplayRow'>							
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Password</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='password' ng-model="ToLogin.Password"/>
+											</div>
+										</div>
+									</div>	
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Re-enter Password</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='password' ng-model="ToLogin.rePassword"/>
+											</div>
+										</div>							
+									</div>
+								</div>
+							</div>
+							<div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='SectionFieldLabel'>
+												<span class='SectionLabelText'>Contact Details</span>
+											</div>								
+										</div>
+									</div>	
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Phone Number</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0"  type='number' ng-model="ToLogin.PhoneNumber"/>
+											</div>
+										</div>
+									</div>							
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Email Address</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='email' ng-model="ToLogin.Email"/>
+											</div>
+										</div>
+									</div>									
+								</div>
+								
+								<div class='Button' ng-click="ToLogin.Register()" tabIndex="0">
+									<span>Register</span>
+								</div>
+								<div class='FieldLink'>
+									<span><a href='#/login'>Cancel</a></span>
+								</div>
+							</div>
+							<div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='SectionFieldLabel'>
+												<span class='SectionLabelText'>Admin Details</span>
+											</div>								
+										</div>
+									</div>	
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Admin UserName</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0"  type='text' ng-model="ToLogin.AdminUsername"/>
+											</div>
+										</div>
+									</div>							
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Admin Password</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='password' ng-model="ToLogin.AdminPassword"/>
+											</div>
+										</div>
+									</div>									
+								</div>								
+								
+							</div>
+							<!--div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+										<label for="upload" class="btn btn-success">
+                                            <i class="glyphicon glyphicon-circle-arrow-up"></i>
+                                            Select A Picture
+                                        </label>
+                                        <input id="upload" style="display:none;" type='file' file-input="files"  class="input-xlarge" onchange="angular.element(this).scope().imageUpload(event)" />
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class="box-content">
+												<div class="row" style="margin:1%; "> 
+													<div class="col-md-5 left"> 
+														<h6>Name: {{ToLogin.file.name }}</h6> 
+													</div>
+													<div class="col-md-4 left"> 
+														<h6>Size: {{ToLogin.file.size/1024|number:2 }} KB</h6> 
+													</div>
+													<div class="col-md-3 bottom"> 
+														<h6>Type: {{ToLogin.file.type.slice(ToLogin.file.type.lastIndexOf('/') + 1)}} </h6> 
+													</div>    
+												</div> 
+
+												<div class="row" style="margin:1%;"> 
+													<div class="col-md-12"> 
+														<p>
+															<img class="img-thumbnail" style="width:250px; height=250px; "  ng-src="{{ToLogin.step}}" />
+														</p> 
+													</div>    
+												</div> 
+											</div>
+										</div>
+									</div>
+								</div>
+							</div-->
+						</div>
+					</div>										
+				</div>
+			</div>
+		</div>
+		

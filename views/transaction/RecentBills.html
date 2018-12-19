@@ -1,0 +1,63 @@
+<div class='Wrapper ApplicationContent'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="RecentTransactions as RecentTrans">
+			<div class='ContentSplit'>				
+				<div class=' '>
+					<div class='FormTitle'><h1>Recent Bill Details</h1></div>
+					<div class='NavButtons'>
+						<div class='Button FloatLeft' ng-click="RecentTrans.GotoPage('Home')" tabIndex="0">
+							<span>Home</span>
+						</div>
+						<div class='Button FloatLeft' ng-click="RecentTrans.GotoPage('NewTrans')" tabIndex="0">
+							<span>New Transaction</span>
+						</div>
+					</div>
+				</div>
+				<div class='SearchOptionsDiv'>
+					<div class='SearchOptions'>
+						<div class='DisplayTable'>
+							<div class='DisplayRow'>
+								<div class='DisplayCell'>
+									<div class='FormTitle'><h1>Select Data</h1></div>
+								</div>
+							</div>
+							<div class='DisplayRow'>
+								<div class='DisplayCell'>
+									<div class='FieldLabel'>
+										<span class='LabelText'>From Date</span>
+									</div>
+									<div class='FieldInput'>
+										<input class='InputField' tabindex="0" type='date' ng-model="RecentTrans.FromDateRange" ng-change='RecentTrans.DateChange()' />
+									</div>
+								</div>
+								<div class='DisplayCell'>
+									<div class='FieldLabel'>
+										<span class='LabelText'>To Date</span>
+									</div>
+									<div class='FieldInput'>
+										<input class='InputField' tabindex="0" type='date' ng-model="RecentTrans.ToDateRange" ng-change='RecentTrans.DateChange()' />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div>
+					<div class='FloatLeft'>
+						<div class='grid width50'>
+							<table id="celltblTrans"></table>
+							<div id='celltblTransNav'></div>
+						</div>					
+					</div>
+					<div class='FloatLeft'>
+						<div class='grid width50'>
+							<table id="celltblTransDetails"></table>
+							<div id='celltblTransDetailsNav'></div>
+						</div>					
+					</div>
+				</div>
+			</div>				
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,78 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AdminOptionsCtrl as AdmOpt">
+			<div class='FormTitle'><h1>Admin - Manage Options</h1></div>
+			<div class='AdminMenu'>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("Home")'>Home</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("AdminOptions")'>Options</div></div>
+						<div class='DisplayCell'><div class='Button Active' ng-click='AdmOpt.Goto("ManageStore")'>Manage Store</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageUser")'>Manage User</div></div>
+						<div class='DisplayCell'><div class='Button' ng-click='AdmOpt.Goto("ManageTax")'>Manage Tax</div></div>
+					</div>
+				</div>
+			</div>
+		
+			<div>
+				<div class='DisplayTable'>
+					<div class='DisplayRow'>
+						<div class='DisplayCell'>
+							<table id="celltblStore"></table>
+							<div id="pcelltblStore"></div>
+						</div>
+						<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						<div class='DisplayCell'>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						<div class='DisplayCell'>
+							<div class='SearchOptionsDiv'>
+								<div class='SearchOptions'>
+									<div class='DisplayTable'>
+										<div class='DisplayRow'>
+											<div class='DisplayCell'>
+												<div class='FormTitle'><h1>Add New Store</h1></div>
+											</div>
+										</div>
+										<div class='DisplayRow'>
+											<div class='DisplayCell'>
+												<div class='FieldLabel'>
+													<span class='LabelText'>Store Name</span>
+												</div>
+												<div class='FieldInput'>
+													<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.StoreName" />
+												</div>
+											</div>
+										</div>
+										<div class='DisplayRow'>
+											<div class='DisplayCell'>
+												<div class='FieldLabel'>
+													<span class='LabelText'>Description</span>
+												</div>
+												<div class='FieldInput'>
+													<input class='InputField' tabindex="0" type='text' ng-model="AdmOpt.Description"/>
+												</div>
+											</div>
+										</div>
+										<div class='DisplayRow'>
+											<div class='DisplayCell'>
+												<div class='FieldLabel'>
+													<span class='LabelText'>Primary : <input class='' tabindex="0" type='checkbox' ng-model="AdmOpt.Primary"/></span>
+												</div>
+											</div>
+										</div>
+										<div class='DisplayRow'>
+											<div class='DisplayCell'>
+												<div class='Button' ng-click='AdmOpt.AddNewItem("Store")'>Add</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

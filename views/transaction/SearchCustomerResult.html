@@ -1,0 +1,39 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="TransActionController as TransAction">
+			<div class='FormTitle'><h1>Search Result</h1></div>
+				<div class='Navigation'>
+					<div class='FloatLeft Button PageBtn Next' ng-click="TransAction.Navigate('Prev')"  ng-class="{Disable:TransAction.PrvDisable}">Prev</div>
+					<div class='FloatLeft PageInfo'  ng-bind="TransAction.PagerInfo">{{TransAction.Pagerinfo}} test</div>
+					<div class='FloatLeft Button PageBtn Prev' ng-click="TransAction.Navigate('Next')" ng-class="{Disable:TransAction.NxtDisable}">Next</div>
+				</div>
+				<div class='ResultAccordMain'>
+					<div class='ResultAccordHead' ng-repeat="x in TransAction.sData">
+						<div class='DisplayTable width100'>						
+							<div class='DisplayCell AccordCell'>
+								<div>
+									<div class='AccordHeadTitle FloatLeft'>
+										<div class='Name'>{{x.FIRST_NAME.substring(0,1).toUpperCase()}}{{x.FIRST_NAME.substring(1,x.FIRST_NAME.length).toLowerCase()}},&nbsp
+										{{x.LAST_NAME.substring(0,1).toUpperCase()}}{{x.LAST_NAME.substring(1,x.FIRST_NAME.length).toLowerCase()}}
+										</div>
+										<div class='Email'>{{x.EMAIL.toLowerCase()}}</div>
+									</div>
+									</div>
+								<div class='Button FloatLeft' id="CustomerId{{x.ROW_ID}}" ng-click="TransAction.NewTransaction($event)">New Transaction</div>
+							</div>
+						</div>						
+					</div>
+				</div>
+				<div class='FooterButton'>
+					<div class='Button' ng-click="TransAction.AddNewCustomer()" tabIndex="0">
+						<span>Add new Customer</span>
+					</div>
+					
+					<div class='Button' ng-click="TransAction.GoToHome()" tabIndex="0">
+						<span>Go to Home</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

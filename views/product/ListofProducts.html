@@ -1,0 +1,23 @@
+<div ng-controller="AddProductController as AddProduct" class='Wrapper ApplicationContent'>
+	
+	<div class='FormOptions'>
+		<div class='Button' ng-click='AddProduct.GoToHome()'>Home</div>
+		<div class='Button' ng-click='AddProduct.AddNewProduct()'>New Record</div>
+		<div class='Button' ng-click='AddProduct.PrintBarcode()'>Print Barcode</div>
+	</div>
+	<div class='DisplayTable FloatLeft'>
+		<div class='DisplayRow'>
+			<div class='DisplayCell'>
+				<table id="celltbl"></table>
+				<div id="pcelltbl"></div>
+			</div>
+		</div>
+	</div>
+	<div class='DisplayTable FloatLeft'>
+		<div class='DisplayRow'>
+			<div class='DisplayCell'>
+				<nvd3 options="options" data="data"></nvd3>
+			</div>
+		</div>
+	</div>
+ </div>

@@ -1,0 +1,38 @@
+<div class='Wrapper ApplicationContent'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="StartBillingController as StartBill">
+			<div class='ContentSplit'>				
+				<div class=' '>
+					<div class='FormTitle'><h1>Billing</h1></div>
+					<div class='NavButtons'>
+						<div class='Button FloatLeft' ng-click="StartBill.GotoPage('Home')" tabIndex="0">
+							<span>Home</span>
+						</div>
+						<div class='Button FloatLeft' ng-click="StartBill.GotoPage('NewTrans')" tabIndex="0">
+							<span>New Transaction</span>
+						</div>
+					</div>
+				</div>
+				<div class='FloatLeft'>							
+					<div class='grid'>
+						<table id="celltblNoEdit"></table>
+					</div>
+					<div class='TotalDisplay DisplayTable'>						
+						<div class='DisplayRow DummyRow'>
+							<div class='DisplayCell'><div class=''></div></div>
+							<div class='DisplayCell'><div class='' ></div></div>
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.NoSubmitButPrint()" >Print</div></div>
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.NoCancelTransaction()">Cancel</div></div>
+						</div>
+					</div>							
+				</div>
+				<div class='FloatLeft'>
+					<div class=''>
+						<iframe class='DisplayBill' src="{{StartBill.Source}}" width="800px" height="900px"/>
+					</div>
+				</div>			
+			</div>				
+			</div>
+		</div>
+	</div>
+</div>

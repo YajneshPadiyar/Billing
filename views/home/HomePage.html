@@ -1,0 +1,79 @@
+<div class='Wrapper' id='Home'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="HomePageController as HomePage">
+			<div class='FormTitle'><h1>Home</h1></div>
+			<div class='SuccessMessage'>Welcome !  
+					<b ng-bind="HomePage.FirstName"></b> <b ng-bind="HomePage.LastName"></b>,&nbsp;<b ng-bind="HomePage.Date"></b>
+					<span class='FloatRight miniButton Logout' ng-click='HomePage.StartLogout()'>Logout</span>
+			</div>
+			<div class='DisplayTable width100'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='Button' ng-click='HomePage.StartBilling()'>
+							<span>Start Billing</span>
+						</div>
+					</div>
+					<div class='DisplayCell'>
+						<div class='Button' ng-click='HomePage.RecentBills()'>
+							<span>Open Recent Bills</span>
+						</div>
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='Button' ng-click='HomePage.ProcessReturn()'>
+							<span>Return</span>
+						</div>
+					</div>
+					<div class='DisplayCell'>
+						<div class='Button' ng-if='HomePage.isAdmin' ng-click='HomePage.StartAddProduct()'>
+							<span>Stock Management</span>
+						</div>
+					</div>					
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='Button' ng-if='HomePage.isAdmin' ng-click='HomePage.GotoAdmin()'>
+							<span>Adminstration</span>
+						</div>
+					</div>
+					<div class='DisplayCell'>
+						<div class='Button' ng-if='HomePage.isAdmin' ng-click='HomePage.Reports()'>
+							<span>Reports</span>
+						</div>
+					</div>
+					
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='Button' ng-if='HomePage.isAdmin' ng-click='HomePage.ManageEmployee()'>
+							<span>Employee Management</span>
+						</div>
+					</div>
+					<div class='DisplayCell'>
+						<div class='Button' ng-if='HomePage.isAdmin' ng-click=''>
+							<span>&nbsp;</span>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class='DisplayTable'>
+				<div class='DisplayRow'><div class='DisplayCell'>&nbsp;</div><div class='DisplayCell'>&nbsp;</div></div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<table id="celltblPausedDetails"></table>
+					</div>
+					<div class='DisplayCell'>
+						<div class='StaffCount' ng-if='HomePage.isAdmin'>
+							<div>Today's Staff Count</div>
+							<span class='StaffCountLabel'>Present : </span><span class='StaffCountVal GreenMark indCell' ng-bind='HomePage.Present'></span>
+							<span class='StaffCountLabel'>, Leave : </span><span class='StaffCountVal YellowMark indCell' ng-bind='HomePage.Leave'>20</span>
+							<span class='StaffCountLabel'>, Absent : </span><span class='StaffCountVal RedMark indCell' ng-bind='HomePage.Absent'>2</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

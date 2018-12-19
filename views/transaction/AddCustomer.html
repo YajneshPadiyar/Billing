@@ -1,0 +1,56 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AddNewController as NewCustCtrl">
+			<div class='FormTitle'><h1>Add New Customer</h1></div>
+			<div class='DisplayTable'>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>First Name</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabindex="0" type='TEXT' ng-model="NewCustCtrl.FirstName"/>
+						</div>
+					</div>
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Last Name</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabindex="0" type='TEXT' ng-model="NewCustCtrl.LastName"/>
+						</div>
+					</div>				
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Phone Number</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabindex="0" type='number' ng-model="NewCustCtrl.PhoneNumber"/>
+						</div>
+					</div>				
+				</div>
+				<div class='DisplayRow'>
+					<div class='DisplayCell'>
+						<div class='FieldLabel'>
+							<span class='LabelText'>Email</span>
+						</div>
+						<div class='FieldInput'>
+							<input class='InputField' tabindex="0" type='email' ng-model="NewCustCtrl.Email"/>
+						</div>
+					</div>				
+				</div>
+				<div class='Button' ng-click="NewCustCtrl.AddCustomer()" tabIndex="0">
+						<span>Add Customer</span>
+				</div>
+				<div class='FieldLink'>
+					<span><a href='#/StartTransaction'>Cancel</a></span>&nbsp;|&nbsp;<span><a href='#/HomePage'>Home Page</a></span>
+					&nbsp;|&nbsp;<span><a href='#/StartTransaction'>Search Customer</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

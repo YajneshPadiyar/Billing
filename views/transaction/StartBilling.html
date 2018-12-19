@@ -1,0 +1,186 @@
+<div class='Wrapper ApplicationContent'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="StartBillingController as StartBill">
+			<div class='ContentSplit'>
+				<div class='FloatLeft ContentLeft'>
+					<div class='FormTitle'><h1>Billing</h1></div>
+					<div class='NavButtons'>
+						<div class='Button FloatLeft' ng-click="StartBill.GotoPage('Home')" tabIndex="0">
+							<span>Home</span>
+						</div>
+						<div class='Button FloatLeft' ng-click="StartBill.GotoPage('NewTrans')" tabIndex="0">
+							<span>New Transaction</span>
+						</div>
+					</div>
+					<div class='CustomerDetails'>
+						<div class='DisplayTable'>
+							<div class='DisplayRow SucProdDetails'>
+								<div class='DisplayCell Right'>
+									<div ng-bind ="StartBill.CustDetails.L"></div>
+								</div>
+								<div class='DisplayCell Left'>
+									<div class='DisplayFontReadOnly' ng-bind ="StartBill.CustDetails.V"></div>
+								</div>
+							</div>
+							<div class='DisplayRow SucProdDetails'>
+								<div class='DisplayCell Right'>
+									<div ng-bind ="StartBill.TransDetail.L"></div>
+								</div>
+								<div class='DisplayCell Left'>
+									<div class='DisplayFontReadOnlyColor' ng-bind ="StartBill.TransDetail.V"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='AddProduct'>
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight30' >
+									<span class='LabelText'>Search By Product Code</span>
+							</div>
+							<!--div class='FieldInput FloatLeft1'>
+								<input class='InputField' tabindex="0" type='TEXT' ng-model="StartBill.ProductCode" ng-keyup='StartBill.EnterKeyPress($event)'/>
+							</div-->
+							<md-autocomplete
+							  ng-keyup="StartBill.EnterKeyPress($event)"
+							  ng-disabled="StartBill.isDisabled"
+							  md-no-cache="StartBill.noCache"
+							  md-selected-item="StartBill.selectedItem"
+							  md-search-text-change="StartBill.searchTextChange(StartBill.searchText)"
+							  md-search-text="StartBill.searchText"
+							  md-selected-item-change="StartBill.selectedItemChange(item)"
+							  md-items="item in StartBill.querySearch(StartBill.searchText)"
+							  md-item-text="item.name"
+							  md-min-length="0"
+							  placeholder="Pick by code"
+							  md-menu-class="autocomplete-custom-template">
+							<md-item-template>
+							 <span class="item-title">
+								<md-icon md-svg-icon="img/stock.svg"></md-icon>
+								<span> <span>Product Code : </span><span class='PriceFontDefault'>{{item.bar_code}}</span> </span>
+							  </span>
+							  <span class="item-metadata">
+								<span class="item-metastat"><span>Code : </span><span class='PriceFontDefault'>{{item.DisplayName}},</span></span>
+								<span class="item-metastat"><span>Type : </span><span class='PriceFontDefault'>{{item.Type}},</span></span>
+								<span class="item-metastat"><span>Price : Rs.</span><span class='PriceFontGreen'>{{item.Price}}</span></span>
+							  </span>
+							</md-item-template>
+						  </md-autocomplete>
+						</div>
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight50' >
+									<span class='LabelText'>OR</span>
+							</div>
+						</div>
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight30' >
+									<span class='LabelText'>Search By Product Name</span>
+							</div>
+							<md-autocomplete
+							  ng-keyup="StartBill.EnterKeyPress($event)"
+							  ng-disabled="StartBill.isDisabled"
+							  md-no-cache="StartBill.noCache"
+							  md-selected-item="StartBill.selectedItem2"
+							  md-search-text-change="StartBill.searchTextChange2(StartBill.searchTextByName2)"
+							  md-search-text="StartBill.searchTextByName2"
+							  md-selected-item-change="StartBill.selectedItemChange2(item)"
+							  md-items="item in StartBill.querySearchWithName(StartBill.searchTextByName2)"
+							  md-item-text="item.name2"
+							  md-min-length="0"
+							  placeholder="Pick by Name"
+							  md-menu-class="autocomplete-custom-template">
+							<md-item-template>
+							  <span class="item-title">
+								<md-icon md-svg-icon="img/stock.svg"></md-icon>
+								<span> <span>Product Code : </span><span class='PriceFontDefault'>{{item.bar_code}}</span> </span>
+							  </span>
+							  <span class="item-metadata">
+								<span class="item-metastat"><span>Code : </span><span class='PriceFontDefault'>{{item.DisplayName}},</span></span>
+								<span class="item-metastat"><span>Type : </span><span class='PriceFontDefault'>{{item.Type}},</span></span>
+								<span class="item-metastat"><span>Price : Rs.</span><span class='PriceFontGreen'>{{item.Price}}</span></span>
+							  </span>
+							</md-item-template>
+						  </md-autocomplete>
+						</div>
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight50' >
+									<span class='LabelText'>OR</span>
+							</div>
+						</div>
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight30' >
+									<span class='LabelText'>Search By Product Type</span>
+							</div>
+							<md-autocomplete
+							  ng-keyup="StartBill.EnterKeyPress($event)"
+							  ng-disabled="StartBill.isDisabled"
+							  md-no-cache="StartBill.noCache"
+							  md-selected-item="StartBill.selectedItem3"
+							  md-search-text-change="StartBill.searchTextChange3(StartBill.searchTextByType)"
+							  md-search-text="StartBill.searchTextByType"
+							  md-selected-item-change="StartBill.selectedItemChange3(item)"
+							  md-items="item in StartBill.querySearchWithType(StartBill.searchTextByType)"
+							  md-item-text="item.name3"
+							  md-min-length="0"
+							  placeholder="Pick by Type"
+							  md-menu-class="autocomplete-custom-template">
+							<md-item-template>
+							  <span class="item-title">
+								<md-icon md-svg-icon="img/stock.svg"></md-icon>
+								<span> <span>Product Code : </span><span class='PriceFontDefault'>{{item.bar_code}}</span> </span>
+							  </span>
+							  <span class="item-metadata">
+								<span class="item-metastat"><span>Code : </span><span class='PriceFontDefault'>{{item.DisplayName}},</span></span>
+								<span class="item-metastat"><span>Type : </span><span class='PriceFontDefault'>{{item.Type}},</span></span>
+								<span class="item-metastat"><span>Price : Rs.</span><span class='PriceFontGreen'>{{item.Price}}</span></span>
+							  </span>
+							</md-item-template>
+						  </md-autocomplete>
+						</div>
+						<div class='AddProductLine'>
+							<div class='FieldLabel FloatLeft1 LineHeight30' >
+									<span class='LabelText'>Quantity</span>
+							</div>
+							<div class='FieldInput FloatLeft1'>
+								<input class='InputField' tabindex="0" type='number' ng-model="StartBill.Quantity" ng-init="Start.Quantity=1" ng-keyup='StartBill.EnterKeyPress($event)'/>
+							</div>
+							<div class='FloatLeft'>
+							<div class='ButtonSAA' ng-click="StartBill.SearchAndAdd()" tabIndex="0">
+								<span>Search and Add</span>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='FloatLeft ContentRight'>
+					<div class='grid'>
+						<table id="celltbl"></table>
+					</div>
+					<div class='TotalDisplay DisplayTable'>
+						<div class='DisplayRow DummyRow'>
+							<div class='DisplayCell'>
+								<div class=''>
+									<span class='LabelText'>Discount % :</span>
+								</div>
+							</div>
+							<div class='DisplayCell'>
+								<div class='FieldInput' >
+									<input class='InputField' tabindex="0" type='number' ng-model="StartBill.Discount"  ng-keyup='StartBill.DiscountChange($event)'/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='TotalDisplay DisplayTable'>
+						<div class='DisplayRow DummyRow'>
+							<div class='DisplayCell'><div class=''></div></div>
+							<div class='DisplayCell'><div class='' ></div></div>
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.SubmitAndPrint()" >Submit and Print</div></div>
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.PauseTransaction()">Pause</div></div>
+							<div class='DisplayCell'><div class='Button' ng-click="StartBill.CancelTransaction()">Cancel</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

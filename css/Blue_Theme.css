@@ -1,0 +1,80 @@
+:root {
+  --red: #b00;
+  --blue: linear-gradient(to right,#c01718 0,#c01718 15%,#e25507 31%,#ed7202 50%,#f8ad01 100%,#f8ad01 100%,#f8b101 100%);
+  --fullwidth: 100%;
+  --activeBtn : #dc3300;
+  --fontColorWhite : #FFF;
+  --yellowcoloe :#E6E600;
+  --greycolor :#C4C4C4;
+  --buttonColor : #f36d00;
+  --buttonGreen : green;
+}
+/*linear-gradient(to right,#c01718 0,#c01718 15%,#e25507 31%,#ed7202 50%,#f8ad01 100%,#f8ad01 100%,#f8b101 100%)*/
+#footer {
+background: var(--blue);
+}
+
+.FieldLink a,a.link{
+	color:var(--buttonColor);
+}
+
+.Button,.ButtonSAA,.miniButton{
+	border:1px solid var(--buttonColor);
+	background:var(--buttonColor);
+}
+.ButtonGreen,.ButtonGreenSAA,.miniButtonGreen{
+	border:1px solid var(--fontColorWhite);
+	background:var(--buttonGreen);
+	color:var(-fontColorWhite);
+}
+
+.ButtonYellow{
+	border:1px solid var(--fontColorWhite);
+	background:var(--yellowcoloe);
+	color:var(--red);
+}
+.ArrowRight{
+	width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;  
+  border-left: 10px solid green;
+}
+.ApplicationHeader,.Toggle{
+	background:var(--blue);
+}
+.AttHeaderMonth .Button.Active,
+.AdminMenu .Button.Active,
+.SubMenu .Button.Active{
+	background:var(--activeBtn);
+	color:var(--fontColorWhite);
+}
+
+.Button:hover,.ButtonSAA:hover,.miniButton:hover{
+	background:var(--activeBtn);
+}
+
+.ApplicationHeader{
+	border-top-color:var(--greycolor);
+	border-bottom-color:var(--greycolor);
+}
+
+.ui-widget-header { background: var(--blue) ; color: var(--fontColorWhite); }
+
+.GreenMark{
+	background:Green;
+	color:#FFF;	
+}
+.RedMark{
+	background:yellow;
+	color:red;	
+}
+.YellowMark{
+	background:red;
+	color:yellow;
+}
+
+.Readonly,.Readonly input[Readonly="Readonly"]{
+	background:#D4D4D4;
+	color:#333;
+}

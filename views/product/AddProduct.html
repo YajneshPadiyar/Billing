@@ -1,0 +1,155 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AddProductController as AddProduct">
+			<div class='FormTitle'><h1>Add Product</h1></div>
+			<div class='DisplayTable RegForm'>						
+						<div class='DisplayRow'>
+							<div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='SectionFieldLabel'>
+												<span class='SectionLabelText'>Product Details</span>
+											</div>								
+										</div>
+									</div>	 
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Product Name</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabIndex="0" type='text' ng-model="AddProduct.ProductName"/>
+											</div>
+										</div>
+									</div>							
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Display Name</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabIndex="0" type='text' ng-model="AddProduct.DisplayName"/>
+											</div>
+										</div>
+									</div>	
+									<div class='DisplayRow'>							
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Type</span>
+											</div>
+											<div class='FieldInput'>
+												<!--input class='InputField' tabindex="0" type='text' ng-model="AddProduct.ProductType"/-->
+												<select class='InputField' name = "ProductType" id = "ProductType" ng-model = "AddProduct.ProductType">
+													<option ng-repeat="option in AddProduct.ProductTypeVal" value="{{option.val}}">{{option.name}}</option>
+												</select>
+											</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+							<div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='SectionFieldLabel'>
+												<span class='SectionLabelText'>Pricing Details</span>
+											</div>								
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Cost Price</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='number' ng-model="AddProduct.CostPrice"/>
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Secret Code</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='text' ng-model="AddProduct.SecretCode"/>
+											</div>
+										</div>
+									</div>	
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Selling Price</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0"  type='number' ng-model="AddProduct.SellPrice"/>
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Wholesale Price</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='number' ng-model="AddProduct.WSPrice"/>
+											</div>
+										</div>
+									</div>			
+									
+																		
+								</div>
+								
+								<div class='Button' ng-click="AddProduct.AddProducts(AddProduct)" tabIndex="0">
+									<span>Add Product</span>
+								</div>
+								<div class='FieldLink'>
+									<span><a href='#/HomePage'>Cancel</a></span>
+								</div>
+							</div>
+							<div class='DisplayCell RegCell'>
+								<div class='DisplayTable Showborders'>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='SectionFieldLabel'>
+												<span class='SectionLabelText'>BAR Code Details</span>
+											</div>								
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Bar Code</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='TEXT' ng-model="AddProduct.BarCode"/>
+											</div>
+										</div>
+									</div>
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Quantity</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0" type='number' ng-model="AddProduct.Quantity"/>
+											</div>
+										</div>
+									</div>	
+									<div class='DisplayRow'>
+										<div class='DisplayCell'>
+											<div class='FieldLabel'>
+												<span class='LabelText'>Vat</span>
+											</div>
+											<div class='FieldInput'>
+												<input class='InputField' tabindex="0"  type='number' ng-model="AddProduct.Tax1"/>
+											</div>
+										</div>
+									</div>																	
+								</div>
+							</div>
+						</div>
+					</div>			
+	</div>
+</div>

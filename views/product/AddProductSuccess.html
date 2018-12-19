@@ -1,0 +1,65 @@
+<div class='Wrapper'>
+	<div class='InnerWrapper RegistrationWrap'>
+		<div class='Content LoginForm Registration' ng-controller="AddProductController as AddProduct">
+			<div class='FormTitle'><h1>Add Product</h1></div>
+			<div class='SuccessMessage' >Product addition Successful.</div>
+			<div class='GrayBox'>
+				<div class='GrayBoxContent'>
+					<div class='DisplayTable width100'>
+						<div class='DisplayRow '>
+							<div class='DisplayCell '>
+							<div class='ProdSucSectionText'>Product Details</div>	
+								<div class='DisplayTable ProdSuccessRegForm width50'>									
+									<div class='DisplayRow SucProdDetails' ng-repeat="x in AddProduct.SusProdDetail">
+										<div class='DisplayCell Right'>
+											<div>{{x.L}} :</div>
+										</div>
+										<div class='DisplayCell Left'>
+											<div>&nbsp;{{x.V}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='DisplayCell '>
+							<div class='ProdSucSectionText'>Pricing Details</div>	
+								<div class='DisplayTable ProdSuccessRegForm width50'>									
+									<div class='DisplayRow SucProdDetails' ng-repeat="x in AddProduct.SusPriceDetail">
+										<div class='DisplayCell Right'>
+											<div>{{x.L}} :</div>
+										</div>
+										<div class='DisplayCell Left'>
+											<div>&nbsp;{{x.V}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='DisplayCell '>
+							<div class='ProdSucSectionText'>Bar Code Details</div>	
+								<div class='DisplayTable ProdSuccessRegForm width50'>
+									<div class='DisplayRow SucProdDetails' ng-repeat="x in AddProduct.SudBarCodeDetail">
+										<div class='DisplayCell Right'>
+											<div>{{x.L}} :</div>
+										</div>
+										<div class='DisplayCell Left'>
+											<div>&nbsp;{{x.V}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='Button' ng-click="AddProduct.AddOneMoreProduct()" tabIndex="0">
+				<span>Add one more Product</span>
+			</div>
+			<div class='Button' ng-click="AddProduct.GotoStockManagement()" tabIndex="0">
+				<span>Stock Management</span>
+			</div>
+			
+			<div class='Button' ng-click="AddProduct.GoToHome()" tabIndex="0">
+				<span>Go to Home</span>
+			</div>
+		</div>
+	</div>
+</div>
